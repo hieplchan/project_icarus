@@ -18,7 +18,16 @@ func _physics_process(delta: float) -> void:
 	# Get direction: -1, 0, 1
 	var direction := Input.get_axis("move_left", "move_right")
 	
-	# Handle animation
+	# Play animation
+	if is_on_floor():
+		if (direction == 0):
+			animated_sprite.play("idle")
+		else:
+			animated_sprite.play("run")
+	else:
+		animated_sprite.play("jump")
+	
+	# Flip animationdadas
 	if direction > 0:
 		animated_sprite.flip_h = false
 	elif direction < 0:

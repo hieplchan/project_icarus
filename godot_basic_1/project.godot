@@ -15,6 +15,10 @@ run/main_scene="uid://ymgemjk6hhu"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Music="*res://scenes/music.tscn"
+
 [dotnet]
 
 project/assembly_name="godot_basic_1"

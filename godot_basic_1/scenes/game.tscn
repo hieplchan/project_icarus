@@ -1,6 +1,8 @@
-[gd_scene load_steps=14 format=4 uid="uid://ymgemjk6hhu"]
+[gd_scene load_steps=16 format=4 uid="uid://ymgemjk6hhu"]
 
+[ext_resource type="Script" uid="uid://c708suodk8fal" path="res://scripts/game_manager.gd" id="1_gee14"]
 [ext_resource type="PackedScene" uid="uid://tsu8qnasfyv7" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="FontFile" uid="uid://dlk4mjp8mojk5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://be1pyffay8otj" path="res://assets/sprites/world_tileset.png" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://dlindgyoilh6w" path="res://scenes/platform.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://kqgk5ji8ronn" path="res://scenes/coin.tscn" id="4_lbhrr"]
@@ -214,6 +216,22 @@ _data = {
 
 [node name="Game" type="Node2D"]
 
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_gee14")
+
+[node name="Score" type="Label" parent="GameManager"]
+offset_left = 384.0
+offset_top = -22.0
+offset_right = 490.0
+offset_bottom = 1.0
+theme_override_colors/font_color = Color(0.011764706, 0.14901961, 0.34901962, 1)
+theme_override_fonts/font = ExtResource("2_0tnpc")
+theme_override_font_sizes/font_size = 8
+text = "You collected X coins <3"
+horizontal_alignment = 1
+autowrap_mode = 2
+
 [node name="TileMaps" type="Node" parent="."]
 
 [node name="TileMap_Background" type="TileMapLayer" parent="TileMaps"]
@@ -252,7 +270,7 @@ position = Vector2(55, 9)
 position = Vector2(91, -23)
 
 [node name="Coin3" parent="Coins" instance=ExtResource("4_lbhrr")]
-position = Vector2(428, 25)
+position = Vector2(441, 24)
 
 [node name="Platforms" type="Node" parent="."]
 
